@@ -168,9 +168,7 @@ def build_similarity_matrix(articles):
         if id(article_current) < id(article_adverse):
             cosine = compute_cosine(tfidf_current, tfidf_adverse)
         else:
-            cosine = compute_cosine(
-                tfidf_adverse, tfidf_current
-            )  # pylint: disable=arguments-out-of-order
+            cosine = compute_cosine(tfidf_adverse, tfidf_current)  # pylint: disable=arguments-out-of-order
 
         similarity_matrix[article_current][article_adverse] = cosine
         similarity_matrix[article_adverse][article_current] = cosine
