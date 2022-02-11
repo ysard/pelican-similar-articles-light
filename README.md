@@ -1,6 +1,6 @@
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/pelican-similar-articles-light)
 ![PyPI](https://img.shields.io/pypi/v/pelican-similar-articles-light)
-![PyPI - License](https://img.shields.io/pypi/l/pelican-similar-articles-light)
+![PyPI - License](https://img.shields.io/pypi/l/pelican-similar-articles-light?color=brigthgreen)
 
 # Similar articles for Pelican
 
@@ -11,7 +11,7 @@ on their tags.
 
 ## Installation
 
-    pip install pelican-sphinxsearch
+    pip install pelican-similar-articles-light
 
     # Or locally
     python setup.py develop
@@ -70,3 +70,35 @@ The the minimal score to consider an article as similar:
 ```python
 SIMILAR_ARTICLES_MIN_SCORE = 0.0001
 ```
+
+## About the implementation
+
+The plugin computes a similarity score based on the tags of the articles.
+It consists in building a global bag of words (dictionary), and a bag of words
+for each article, representing this article as an n-dimensional vector.
+
+The terms are weighted using the [TF-IDF method](https://en.wikipedia.org/wiki/Tf%E2%80%93idf),
+according to their rareness within the corpus formed by all the tags of the site.
+
+The vector of each article is then compared to all the others via the calculation
+of the [cosine simiarity](https://en.wikipedia.org/wiki/Cosine_similarity)
+widely used in text mining. It consists in determining the angle formed between
+2 vectors.
+The maximum similarity obtained is 1 (the documents have all their important tags
+in common), while the minimum is 0 (the documents have no tag in common).
+
+
+## Comparison with **Similar Posts** plugin
+
+The [Similar Posts plugin](https://github.com/pelican-plugins/similar-posts)
+uses exactly the same technique, I don't think you will have any difference in the
+the result obtained.
+However, the dependencies used are a bit too large and somewhat oversized for
+the intended purpose: a few words (tags) summarizing an article among a handful
+of articles from a Pelican blog.
+
+The implementation of Similar Articles Light is in pure Python.
+**In any case, reinventing the wheel should never be a reason to sell a technology**;
+therefore please consider this plugin as a proof of concept of a few dozen lines of code,
+fully functional and without dependencies; so probably slightly faster to run
+than *Similar Posts*.
