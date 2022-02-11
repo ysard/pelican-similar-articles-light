@@ -1,3 +1,7 @@
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/pelican-similar-articles-light)
+![PyPI](https://img.shields.io/pypi/v/pelican-similar-articles-light)
+![PyPI - License](https://img.shields.io/pypi/l/pelican-similar-articles-light)
+
 # Similar articles for Pelican
 
 A Pelican plugin to provide a support of similar articles, allowing users to
