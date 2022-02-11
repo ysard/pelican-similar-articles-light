@@ -47,8 +47,9 @@ With bootstrap and translations support:
 
 In your `pelicanconf.py`, please add/update these lines:
 
-    PLUGINS += ['pelican.plugins.similar_articles_light',]
-
+```python
+PLUGINS += ['pelican.plugins.similar_articles_light',]
+```
 
 You you can customize certain features of the plugin.
 You will find below the default values which can be overwritten by a statement
@@ -56,8 +57,12 @@ in the`pelicanconf.py` file.
 
 The maximum number of similar articles:
 
-    SIMILAR_ARTICLES_MAX_COUNT = 2
+```python
+SIMILAR_ARTICLES_MAX_COUNT = 2
+```
 
 The the minimal score to consider an article as similar:
 
-    SIMILAR_ARTICLES_MIN_SCORE = 0.0001
+```python
+SIMILAR_ARTICLES_MIN_SCORE = 0.0001
+```
