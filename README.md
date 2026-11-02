@@ -1,6 +1,6 @@
 [![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/ysard/pelican-similar-articles-light)](https://github.com/ysard/pelican-similar-articles-light/releases/latest/)
-[![python versions on pypi](https://img.shields.io/pypi/pyversions/pelican-similar-articles-light)](https://pypi.python.org/pypi/pelican-similar-articles-light)
 [![version on pypi](https://img.shields.io/pypi/v/pelican-similar-articles-light)](https://pypi.python.org/pypi/pelican-similar-articles-light)
+[![python versions on pypi](https://img.shields.io/pypi/pyversions/pelican-similar-articles-light)](https://pypi.python.org/pypi/pelican-similar-articles-light)
 [![Downloads](https://img.shields.io/pypi/dm/pelican-similar-articles-light)](https://pypi.org/project/pelican-similar-articles-light/)
 [![license](https://img.shields.io/pypi/l/pelican-similar-articles-light?color=brigthgreen)](https://github.com/ysard/pelican-similar-articles-light/blob/master/LICENSE)
 [![Donate](./images/liberapay.svg)](https://liberapay.com/Ysard/donate)
