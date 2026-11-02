@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=61.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pelican-similar-articles-light"
+dynamic = ["version"]
+description = "A lightweight Pelican plugin to provide a list of similar articles, related to one another by a similarity calculation based on their tags."
+readme = "README.md"
+authors = [
+    { name = "Ysard", email = "ysard@users.noreply.github.com" }
+]
+keywords = ["pelican", "similarity", "similarity score", "tf-idf"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Framework :: Pelican",
+    "Framework :: Pelican :: Plugins",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "Intended Audience :: End Users/Desktop",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+license = "AGPL-3.0-or-later"
+license-files = ["LICENSE"]
+dependencies = [
+    "pelican>=4",
+]
+requires-python = ">=3.6"
+
+[project.urls]
+Homepage = "https://github.com/ysard/pelican-similar-articles-light"
+Repository = "https://github.com/ysard/pelican-similar-articles-light"
+
+[project.optional-dependencies]
+dev = [
+    "zest.releaser[recommended]",
+    "prospector",
+]
+
+[tool.setuptools.packages.find]
+# These lines are mandatory for editable mode:
+# Scans and includes absolutely everything inside `pelican/` no matter the depth.
+include = ["pelican.*"]
+namespaces = true
+
+[tool.setuptools.dynamic]
+version = { attr = "pelican.plugins.similar_articles_light.__version__" }
+
+[tool.zest-releaser]
+python-file-with-version = "pelican/plugins/similar_articles_light/__init__.py"
