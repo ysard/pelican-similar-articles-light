@@ -1,25 +1,27 @@
-![PyPI - Python Version](https://img.shields.io/pypi/pyversions/pelican-similar-articles-light)
-![PyPI](https://img.shields.io/pypi/v/pelican-similar-articles-light)
-![PyPI - License](https://img.shields.io/pypi/l/pelican-similar-articles-light?color=brigthgreen)
+[![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/ysard/pelican-similar-articles-light)](https://github.com/ysard/pelican-similar-articles-light/releases/latest/)
+[![python versions on pypi](https://img.shields.io/pypi/pyversions/pelican-similar-articles-light)](https://pypi.python.org/pypi/pelican-similar-articles-light)
+[![version on pypi](https://img.shields.io/pypi/v/pelican-similar-articles-light)](https://pypi.python.org/pypi/pelican-similar-articles-light)
+[![Downloads](https://img.shields.io/pypi/dm/pelican-similar-articles-light)](https://pypi.org/project/pelican-similar-articles-light/)
+[![license](https://img.shields.io/pypi/l/pelican-similar-articles-light?color=brigthgreen)](https://github.com/ysard/pelican-similar-articles-light/blob/master/LICENSE)
+[![Donate](./images/liberapay.svg)](https://liberapay.com/Ysard/donate)
+
 
 # Similar articles for Pelican
 
-A Pelican plugin to provide a support of similar articles, allowing users to
-access a list of articles linked to each article by a similarity calculation
-on their tags.
+A lightweight Pelican plugin to provide a list of similar articles,
+related to one another by a similarity calculation based on their tags.
 
 
 ## Installation
 
-    pip install pelican-similar-articles-light
+This plugin can be installed via:
 
-    # Or locally
-    python setup.py develop
+    pip install pelican-similar-articles-light
 
 
 ## Template integration
 
-Bare version:
+Minimal version:
 
 ```html
 {% if article.similar_articles %}
@@ -49,15 +51,15 @@ With bootstrap and translations support:
 
 ## Pelican configuration
 
-In your `pelicanconf.py`, please add/update these lines:
+Enable the plugin in `pelicanconf.py`:
 
 ```python
-PLUGINS += ['pelican.plugins.similar_articles_light',]
+PLUGINS = [..., 'similar_articles_light']
 ```
 
-You you can customize certain features of the plugin.
+You you can customize some features of the plugin.
 You will find below the default values which can be overwritten by a statement
-in the`pelicanconf.py` file.
+in the `pelicanconf.py` file.
 
 The maximum number of similar articles:
 
@@ -70,6 +72,7 @@ The the minimal score to consider an article as similar:
 ```python
 SIMILAR_ARTICLES_MIN_SCORE = 0.0001
 ```
+
 
 ## About the implementation
 
@@ -88,7 +91,7 @@ The maximum similarity obtained is 1 (the documents have all their important tag
 in common), while the minimum is 0 (the documents have no tag in common).
 
 
-## Comparison with **Similar Posts** plugin
+## Comparison with the plugin **Similar Posts**
 
 The [Similar Posts plugin](https://github.com/pelican-plugins/similar-posts)
 uses exactly the same technique, I don't think you will have any difference in the
@@ -97,8 +100,13 @@ However, the dependencies used are a bit too large and somewhat oversized for
 the intended purpose: a few words (tags) summarizing an article among a handful
 of articles from a Pelican blog.
 
-The implementation of Similar Articles Light is in pure Python.
+The implementation of *Similar Articles Light* is in pure Python.
 **In any case, reinventing the wheel should never be a reason to sell a technology**;
 therefore please consider this plugin as a proof of concept of a few dozen lines of code,
 fully functional and without dependencies; so probably slightly faster to run
 than *Similar Posts*.
+
+
+## License
+
+This program is released under the GNU Affero General Public License.
